@@ -1,0 +1,693 @@
+/* Fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+
+/* Resets */
+
+*,
+html,
+body
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+    font-family: 'Outfit', sans-serif;  
+    letter-spacing: 3px;
+    color:rgba(48, 48, 48, 0.8);
+    margin-bottom: 20px;
+}
+
+p
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+}
+
+
+/* Sections  */
+section
+{
+    width: 84%;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+
+/* Grid Layout  */
+/* Grid items  */
+.navbar
+{
+    grid-area: navbar;
+}
+.home
+{
+    grid-area: home;
+}
+.services
+{
+    grid-area: services;
+}
+.about
+{
+    grid-area: about;
+}
+.products
+{
+    grid-area: products;
+}
+.clients
+{
+    grid-area: clients;
+}
+.contact
+{
+    grid-area: contact;
+}
+.footer
+{
+    grid-area: footer;
+}
+
+/* Mobile phones view  */
+.grid
+{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "navbar"
+    "home"
+    "services"
+    "about"
+    "products"
+    "clients"
+    "contact"
+    "footer";
+}
+
+/* Tablets and iPads */
+@media (min-width: 768px)
+{
+    .grid
+    {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "navbar navbar"
+        "home home"
+        "services services"
+        "about about"
+        "products products"
+        "clients clients"
+        "contact contact"
+        "footer footer";
+    }
+}
+
+/* Desktops and laptops */
+@media (min-width: 992px)
+{
+    .grid
+    {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+        "navbar navbar navbar"
+        "home home home"
+        "services services services"
+        "about about about"
+        "products products products"
+        "clients clients clients"
+        "contact contact contact"
+        "footer footer footer";
+    }
+}
+
+
+/* Navigation sub-grid */
+/* Grid items  */
+.navbar_logo
+{
+    grid-area: navbar_logo;
+}
+
+.navbar_menu
+{
+    grid-area: navbar_menu;
+
+}
+
+.navbar 
+{
+    padding: 5px 20px;
+    background: rgba(0, 0, 0, 1.0);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 200px auto;
+    grid-template-rows: 1;
+    grid-template-areas: 
+    "navbar_logo navbar_menu";
+}
+
+.navbar .navbar_menu
+{
+    align-self: stretch;
+    height: 100%;
+    
+    display: flex;
+    align-items: center;
+}
+
+.navbar > .navbar_menu > li
+{
+    list-style: none;
+    /* float: left; */
+    padding: 0 20px;    
+} 
+
+.navbar > .navbar_menu > li > a
+{
+    text-decoration: none;
+    color: white;
+} 
+
+.navbar_logo 
+{
+    font-size: 30px;
+    font-weight: 100;
+
+    display: flex;
+    align-items: center;
+}
+
+.navbar_logo > div
+{
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.navbar_logo > div > span
+{
+    font-weight: 700;
+}
+
+
+/* Home Section */
+.home
+{
+    background: url("/images/camera.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height: 100vh;
+    width: 100%;
+}
+
+.home h1
+{
+    position: absolute;
+    top: 120px;
+    left: 100px;
+
+    /* font-style: italic; */
+    font-size: 120px;
+    color: white;
+    opacity: 0.8;
+}
+
+/* Extra large screens  */
+@media (min-width: 1200px)
+{
+    .home h1 
+    {
+        top: 200px;
+        font-size: 160px;
+    }
+}
+
+/* Services Section subgrid */
+.services .services_cards
+{
+    grid-area: services_cards;
+}
+
+.services .services_text
+{
+    grid-area: services_text;
+}
+
+.services .services_details
+{
+    grid-area: services_details;
+}
+
+.services
+{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "services_cards"
+    "services_text"
+    "services_details";
+
+    position: relative;
+    margin-bottom: 40px;
+    box-sizing: border-box;
+}
+
+.services .services_cards
+{
+    width: 100%;
+    /* background: cyan; */
+    position: relative;
+
+    height: 300px;
+}
+
+.services .cards_holder
+{
+    width: 100%;
+    position: absolute;
+    top: -80px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 60px;
+    box-sizing: border-box;
+}
+
+.services .card_item
+{
+    width: 100%;
+    height: 400px;
+
+    /* background: cyan; */
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    box-shadow: 5px 20px 40px 0px grey;
+}
+
+.services .card_item img
+{
+    width: 100%;
+    height: 300px;
+
+    object-fit:cover;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+
+}
+
+.services .card_item > div
+{
+    margin: 30px auto;
+    text-align: center;
+
+    font-size: 20px;
+    letter-spacing: 7px;
+    font-weight: 700;
+}
+
+.services .services_text
+{
+    padding-top: 80px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+
+.services .services_text > h2
+{
+    font-size: 30px;
+}
+
+.services .services_text > p
+{
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 25px;
+    opacity: 1;
+}
+
+.services .services_details 
+{
+    display: flex;
+    justify-content: space-evenly;
+
+    font-size: 70px;
+    color: navy;
+    opacity: 0.8
+}
+
+.services .services_details > div
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.services .services_details span
+{
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: 700;
+    
+}
+
+
+
+/* About Section subgrid  */
+/* Grid items */
+.about_image
+{
+    grid-area: about_image;
+    justify-self: right;
+}
+
+.about_title
+{
+    grid-area: about_title;
+}
+
+.about_text
+{
+    grid-area: about_text;
+    align-self: center;
+}
+
+.about
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "about_title about_title about_title about_title"
+    "about_text about_text about_image about_image";
+
+    margin-bottom: 40px;
+}
+
+.about > h1
+{
+    margin-top: 20px;
+}
+
+.about  .about_image
+{
+    width: 100%;
+    padding: 40px;
+}
+
+.about .about_title 
+{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.about .about_text > p
+{
+    font-size: 19px;
+    font-weight: 300;
+    opacity: 1;
+    margin: 25px 0;
+}
+
+
+
+/* Clients Section subgrid  */
+.clients 
+{
+    background: #eee;
+}
+
+.clients h1
+{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.clients .clients_grid
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+
+    box-sizing: border-box;
+}
+
+.clients .clients_grid_item
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 226px;
+    height: 226px;
+    background: white;
+    border-radius: 20px;
+    margin: 19px;
+    padding: 15px;
+    
+    
+    box-shadow: 5px 10px 25px 0px #aaa;
+}
+
+.clients .clients_grid_item img
+{
+    width: 70%;
+    height: auto;;
+}
+
+
+
+/* Contact Section subgrid  */
+/* Contact items  */
+.contact_text
+{
+    grid-area: contact_text;
+}
+
+.contact_map
+{
+    grid-area: contact_map;
+}
+
+.contact_details
+{
+    grid-area: contact_details;
+}
+
+.contact
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 20px;
+    grid-template-areas: 
+    "contact_text contact_text"
+    "contact_map contact_details";
+
+    margin-top: 40px;
+}
+
+.contact .contact_text
+{
+    text-align: center;
+}
+
+.contact .contact_text > h1
+{
+    margin-top: 20px;
+}
+
+.contact .contact_text > p
+{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    opacity: 1;
+    margin: 15px 0;
+}
+
+.contact .contact_map
+{
+    width: 100%;
+    border-radius: 20px;
+    border: 20px solid navy;
+}
+
+.contact .contact_details
+{
+    width: 100%;
+    padding: 30px;
+    background: rgba(0, 0, 128, 0.4);
+    border-radius: 20px;
+}
+
+.contact .contact_details div
+{
+    display: flex;
+    align-items: flex-end;
+    font-size: 25px;
+    color:rgba(0, 0, 128, 1.0);
+    margin-bottom: 20px;
+}
+
+.contact .contact_details span
+{
+    font-size: 18px;
+    margin-left: 30px;
+}
+
+.contact .contact_details > h1
+{
+    text-align: center;
+    color: rgba(0, 0, 128, 0.8);
+    letter-spacing: -1px;
+    font-weight: 200;
+}
+
+.contact .contact_details > h1 > span
+{
+    font-size: 40px;
+    color: rgba(0, 0, 128, 0.8);
+    letter-spacing: -1px;
+    font-weight: 700;
+    margin-left: 0;
+}
+
+.contact .contact_details .line 
+{
+    width: 200px;
+    height: 3px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 128, 1.0);
+}
+
+
+
+/* Footer  */
+/* Footer subgrid */
+.footer_logo
+{
+    grid-area: footer_logo;
+}
+.footer_brand
+{
+    grid-area: footer_brand;
+}
+.line_desc
+{
+    grid-area: line_desc;
+}
+.footer_social
+{
+    grid-area: footer_social;
+}
+.footer_copyright
+{
+    grid-area: footer_copyright;
+}
+
+.footer
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+    ". footer_logo ."
+    ". footer_brand ."
+    ". line_desc. "
+    ". footer_social ."
+    ". footer_copyright .";
+    
+
+    width: 100%;
+    height: 100vh;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+    color: white;
+    background: rgba(0, 0, 128, 1.0);
+
+    position: relative;
+}
+
+.footer .footer_logo,
+.footer .footer_brand,
+.footer .line_desc,
+.footer .footer_social,
+.footer .footer_copyright
+{
+    justify-self: center;
+}
+
+.footer .footer_logo
+{
+    font-size: 100px;
+    margin-bottom: -60px;
+}
+
+.footer .footer_brand
+{
+    font-size: 50px;
+    margin-bottom: -40px;
+    font-weight: 200;
+    letter-spacing: -1px;
+    color: white;
+}
+.footer .footer_brand span
+{
+    font-weight: 700;
+}
+
+.footer .line_desc
+{
+    width: 200px;
+    height: 3px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    background: rgb(252, 252, 255);
+}
+
+.footer .footer_social
+{
+    display: flex;
+    justify-content: space-evenly;
+
+    font-size: 45px;
+    width: 100%;
+}
+
+.footer .footer_social > a
+{
+    color: white;
+    cursor: pointer;
+}
+
+.footer .footer_copyright
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    bottom: -10px;
+}
