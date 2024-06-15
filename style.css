@@ -300,7 +300,7 @@ section
     /* background: cyan; */
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
-    box-shadow: 5px 20px 40px 0px grey;
+    box-shadow: 5px 5px 15px 0px #ddd;
 }
 
 .services .card_item img
@@ -465,7 +465,7 @@ section
     padding: 15px;
     
     
-    box-shadow: 5px 10px 25px 0px #aaa;
+    box-shadow: 5px 5px 15px 0px #aaa;
 }
 
 .clients .clients_grid_item img
@@ -536,7 +536,7 @@ section
 {
     width: 100%;
     padding: 30px;
-    background: rgba(0, 0, 128, 0.4);
+    background: rgba(0, 0, 128, 0.1);
     border-radius: 20px;
 }
 
@@ -624,7 +624,7 @@ section
     border-top-left-radius: 10%;
     border-top-right-radius: 10%;
     color: white;
-    background: rgba(0, 0, 128, 1.0);
+    background: rgb(2, 2, 43);
 
     position: relative;
 }
